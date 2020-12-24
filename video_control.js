@@ -1,6 +1,8 @@
 
 let videoId = "vdemo_html5_api";
+let videoScreenId = "screenVideo1_html5_api";
 let videoEle = document.getElementById(videoId);
+let videoScreenEle = document.getElementById(videoId);
 
 let rates = [0.5, 1.0, 1.25, 1.5, 2.0];
 let currentRate = 1;
@@ -11,7 +13,11 @@ chrome.runtime.onMessage.addListener(
         if(request.action === "setRate"){
             let rate = request.rate;
             let video = document.getElementById(videoId);
+            let videoScreen = document.getElementById(videoScreenId);
             video.playbackRate = rates[rate];
+            if (videoScreen != null){
+                videoScreen.playbackRate = rates[rate];
+            }
             currentRate = rate;
             sendResponse({code: 0, rate: rate, msg: "Hello"});
         }
@@ -26,20 +32,34 @@ chrome.runtime.onMessage.addListener(
 // 设置快捷键
 document.onkeydown = function (keycode){
     videoEle = document.getElementById(videoId);
+    videoScreenEle = document.getElementById(videoScreenId);
+    let rate = null;
     if (keycode.code === "ArrowRight"){
         videoEle.currentTime += 5;
+        if (videoScreenEle != null){
+            videoScreenEle.currentTime = videoEle.currentTime;
+        }
     } else if(keycode.code === "ArrowLeft") {
         videoEle.currentTime -= 5;
+        if (videoScreenEle != null){
+            videoScreenEle.currentTime = videoEle.currentTime;
+        }
     } else if( keycode.code === "KeyQ"){
-        videoEle.playbackRate = 0.5;
+        rate = 0.5;
     } else if( keycode.code === "KeyW"){
-        videoEle.playbackRate = 1.0;
+        rate = 1.0;
     } else if( keycode.code === "KeyE"){
-        videoEle.playbackRate = 1.25;
+        rate = 1.25;
     } else if( keycode.code === "KeyR"){
-        videoEle.playbackRate = 1.5;
+        rate = 1.5;
     } else if( keycode.code === "KeyT"){
-        videoEle.playbackRate = 2.0;
+        rate = 2.0;
+    }
+    if (rate != null){
+        videoEle.playbackRate = rate;
+        if (videoScreenEle != null){
+            videoScreenEle.playbackRate = rate;
+        }
     }
 }
 
