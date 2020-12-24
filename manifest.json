@@ -8,6 +8,11 @@
     "default_icon": "SJTU.png"
   },
 
+  "icons": {
+    "16": "Radium.png",
+    "48": "Radium.png",
+    "128": "Radium.png"
+  },
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
