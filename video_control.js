@@ -30,6 +30,7 @@ chrome.runtime.onMessage.addListener(
     }
 )
 // 设置快捷键
+// TODO: 增加空格播放
 document.onkeydown = function (keycode){
     videoEle = document.getElementById(videoId);
     videoScreenEle = document.getElementById(videoScreenId);
@@ -54,6 +55,19 @@ document.onkeydown = function (keycode){
         rate = 1.5;
     } else if( keycode.code === "KeyT"){
         rate = 2.0;
+    } else if( keycode.code === "Space"){
+        if (videoEle.paused){
+            videoEle.play();
+        } else {
+            videoEle.pause();
+        }
+        if (videoScreenEle != null){
+            if (videoScreenEle.paused){
+                videoScreenEle.play();
+            } else {
+                videoScreenEle.pause();
+            }
+        }
     }
     if (rate != null){
         videoEle.playbackRate = rate;

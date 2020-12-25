@@ -4,6 +4,8 @@
     <list default="true" id="d9182308-61b2-41c4-b2a9-e37c8e228174" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_control.js" beforeDir="false" afterPath="$PROJECT_DIR$/video_control.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
       <updated>1608561513275</updated>
       <workItem from="1608561514320" duration="8981000" />
       <workItem from="1608645480586" duration="1386000" />
-      <workItem from="1608805456275" duration="5729000" />
+      <workItem from="1608805456275" duration="8838000" />
     </task>
     <servers />
   </component>

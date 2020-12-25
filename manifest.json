@@ -1,7 +1,7 @@
 {
   "name": "Canvas Video Helper",
   "description" : "Canvas Video Helper",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "popup.html",
